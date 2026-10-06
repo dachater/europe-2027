@@ -39,7 +39,9 @@ export function db(): DatabaseSync {
   return (g.__db = d);
 }
 
-export const listHotels = () => db().prepare("SELECT * FROM hotels ORDER BY id DESC").all() as unknown as Hotel[];
+export const listHotels = () =>
+  // node:sqlite rows have a null prototype; Next can only pass plain objects to client components
+  db().prepare("SELECT * FROM hotels ORDER BY id DESC").all().map((r) => ({ ...r })) as unknown as Hotel[];
 
 export function hasHotel(key: string): boolean {
   return !!db().prepare("SELECT 1 FROM hotels WHERE key = ?").get(key);
