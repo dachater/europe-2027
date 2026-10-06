@@ -14,3 +14,9 @@ button:disabled { opacity:.5; } button.ghost { background:none; color:var(--mute
 .body { padding:12px 14px; flex:1; } .body h3 { margin:0 0 4px; font-size:1.05rem; }
 .meta { color:var(--muted); font-size:.9rem; } .badge { background:var(--accent); color:#fff; border-radius:6px; padding:1px 7px; font-size:.85rem; margin-right:6px; }
 .foot { display:flex; justify-content:space-between; padding:6px 10px 10px 14px; } .foot a { color:var(--accent); }
+main.wide { max-width:1200px; } h2 { margin:32px 0 8px; } a { color:var(--accent); }
+.scroll { overflow-x:auto; background:var(--card); border:1px solid var(--border); border-radius:12px; }
+table { border-collapse:collapse; width:100%; min-width:900px; } th,td { text-align:left; padding:10px 12px; border-bottom:1px solid var(--border); vertical-align:top; }
+th { color:var(--muted); font-weight:600; font-size:.85rem; } tr:last-child td { border-bottom:0; }
+td input, td select { background:var(--bg); color:var(--text); border:1px solid var(--border); border-radius:6px; padding:3px 6px; font:inherit; font-size:.9rem; max-width:100%; }
+td input.city { display:block; margin-top:4px; width:130px; } td input.num { width:84px; } td input.cur { width:52px; margin-left:4px; } td input[type=date] { display:block; margin-bottom:4px; }
