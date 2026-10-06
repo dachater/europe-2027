@@ -20,8 +20,8 @@ export async function PATCH(req: Request, { params }: Ctx) {
 }
 
 export async function POST(_: Request, { params }: Ctx) { // refresh details from the web
-  const ok = await refreshHotel(Number((await params).id));
-  return ok ? new Response(null, { status: 204 }) : Response.json({ error: "Couldn't read the Booking.com page." }, { status: 502 });
+  const r = await refreshHotel(Number((await params).id));
+  return r.ok ? new Response(null, { status: 204 }) : Response.json({ error: `Couldn't read the Booking.com page: ${r.reason}` }, { status: 502 });
 }
 
 export async function DELETE(_: Request, { params }: Ctx) {
